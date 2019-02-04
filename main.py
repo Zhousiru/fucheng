@@ -7,6 +7,9 @@ import random
 import os
 import time
 
+START_OFFSET = 2 / 3
+COEFF = 185
+
 
 def getScreenshot(screenshotPath):
     process = subprocess.Popen(
@@ -132,7 +135,7 @@ def main():
     while True:
         input()
         getScreenshot("screenshot.png")
-        press(getDistance("screenshot.png") * 155)
+        press((getDistance("screenshot.png") - START_OFFSET) * COEFF)
 
 
 if __name__ == "__main__":
